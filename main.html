@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html>
 
 <head>
@@ -9,11 +8,9 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			
-			let set1=new Set(arr);
-			let arr2=[...set1].sort((a,b)=>b-a)
-
-			return arr2[1]!==undefined?arr2[1]:null
+			let set1 = new Set(arr);
+			let arr2 = [...set1].sort((a, b) => b - a);
+			return arr2[1] !== undefined ? arr2[1] : null;
 		}
 
 		function Main() {
@@ -27,9 +24,7 @@
 		Main();
 	</script>
 
-    <script type="text/javascript" src="./script.js">
-</script>
-
+    <script type="text/javascript" src="./script.js"></script>
 </body>
 
 </html>
