@@ -9,26 +9,26 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			high=[infinity,infinity]
+			high=[-Infinity,-Infinity]
 
-			arr.map((item)=>{
+			arr.forEach((item)=>{
 				if(item>high[0]){
 					high.shift()
-					high.unshift(parseInt(item))
+					high.unshift(item)
 				}else if(item<high[0] && item>high[1]){
 					high.pop()
-					high.push(parseInt(item))
+					high.push(item)
 				}
 				
 			})
-			return high[1]
+			return high[1]===-Infinity?null:high[1]
 		}
 
 		function Main() {
 			var n = prompt("Enter the number of elements");
 			var arr = [];
 			for (var i = 0; i < n; i++) {
-				arr[i] = prompt("Enter element " + (i+1));
+				arr[i] = parseInt(prompt("Enter element " + (i+1)));
 			}
 			alert(secondHighest(arr));
 		}
