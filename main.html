@@ -9,8 +9,19 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			//Write your code here
-			
+			high=[infinity,infinity]
+
+			arr.map((item)=>{
+				if(item>high[0]){
+					high.shift()
+					high.unshift(parseInt(item))
+				}else if(item<high[0] && item>high[1]){
+					high.pop()
+					high.push(parseInt(item))
+				}
+				
+			})
+			return high[1]
 		}
 
 		function Main() {
