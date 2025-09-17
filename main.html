@@ -9,19 +9,11 @@
 <body>	
 	<script>
 		function secondHighest(arr) {
-			high=[-Infinity,-Infinity]
+			
+			let set1=new Set(arr);
+			let arr2=[...set1].sort((a,b)=>b-a)
 
-			arr.forEach((item)=>{
-				if(item>high[0]){
-					high.shift()
-					high.unshift(item)
-				}else if(item<high[0] && item>high[1]){
-					high.pop()
-					high.push(item)
-				}
-				
-			})
-			return high[1]===-Infinity?null:high[1]
+			return arr2[1]!==undefined?arr2[1]:null
 		}
 
 		function Main() {
